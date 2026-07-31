@@ -11,6 +11,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
       - name: Install system packages
         run: |
           sudo apt-get update
@@ -18,7 +24,6 @@ jobs:
             git \
             zip \
             unzip \
-            openjdk-17-jdk \
             python3-pip \
             autoconf \
             libtool \
